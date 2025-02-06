@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #666;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section:nth-child(odd) {
+            background-color: #f8f8f8;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* About Section */
+        #about p {
+            max-width: 800px;
+            text-align: center;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        #about p:hover {
+            transform: scale(1.02);
+        }
+
+        /* Video Section */
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 16/9;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Goals Section */
+        .goals-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+        }
+
+        .goal-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Hobbies Section */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hobby-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .hobby-card:hover {
+            transform: scale(1.05);
+        }
+
+        .hobby-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Resume Section */
+        .timeline {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .timeline-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        /* LinkedIn Button */
+        .linkedin-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+
+        .linkedin-btn:hover {
+            background-color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm [Your Name], a passionate professional dedicated to [your field/expertise]. With a background in [relevant experience], I strive to [your main professional goal or mission statement].</p>
+    </section>
+
+    <section id="video">
+        <h2>Introduction Video</h2>
+        <div class="video-container">
+            <p>Video coming soon...</p>
+        </div>
+    </section>
+
+    <section id="goals">
+        <h2>Goals</h2>
+        <div class="goals-container">
+            <div class="goal-card">
+                <h3>Short-term Goals</h3>
+                <ul>
+                    <li>Goal 1</li>
+                    <li>Goal 2</li>
+                    <li>Goal 3</li>
+                </ul>
+            </div>
+            <div class="goal-card">
+                <h3>Long-term Goals</h3>
+                <ul>
+                    <li>Goal 1</li>
+                    <li>Goal 2</li>
+                    <li>Goal 3</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <div class="hobbies-grid">
+            <div class="hobby-card">
+                <i class="fas fa-camera"></i>
+                <h3>Photography</h3>
+            </div>
+            <div class="hobby-card">
+                <i class="fas fa-code"></i>
+                <h3>Coding</h3>
+            </div>
+            <div class="hobby-card">
+                <i class="fas fa-book"></i>
+                <h3>Reading</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Resume Highlights</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Achievement 1</h3>
+                <p>Description of your first major achievement or experience.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Achievement 2</h3>
+                <p>Description of your second major achievement or experience.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Achievement 3</h3>
+                <p>Description of your third major achievement or experience.</p>
+            </div>
+        </div>
+        <a href="https://linkedin.com/in/your-profile" class="linkedin-btn" target="_blank">
+            Connect on LinkedIn
+        </a>
+    </section>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const sections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+
